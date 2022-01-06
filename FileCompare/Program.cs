@@ -72,7 +72,7 @@ namespace FileCompare
                 }
             }
 
-            string outputInfo = "";;
+            string outputInfo = "";
             outputInfo += "\nModified:\n";
             foreach (var file in updateList)
             {
@@ -92,7 +92,7 @@ namespace FileCompare
             }
             
             Console.WriteLine(outputInfo);
-            if (!string.IsNullOrEmpty(output)) File.WriteAllText(output + "/file_compare_log.txt", outputInfo);
+            if (!string.IsNullOrEmpty(output)) File.WriteAllText(output, outputInfo);
         }
 
         public static string[] RemovedFiles(string[] files1, string[] files2)
