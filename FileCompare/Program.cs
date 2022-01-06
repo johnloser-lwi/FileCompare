@@ -16,30 +16,30 @@ namespace FileCompare
         {
             for (int i = 0; i < args.Length; i++)
             {
-                if (args[i] == "--path-old")
+                if (args[i] == "--path-old" || args[i] ==  "-p")
                 {
                     path1 = args[i + 1];
                     continue;
                 }
-                if (args[i] == "--path-new")
+                if (args[i] == "--path-new" || args[i] == "-n")
                 {
                     path2 = args[i + 1];
                     continue;
                 }
 
-                if (args[i] == "--output")
+                if (args[i] == "--output" || args[i] == "-o")
                 {
                     output = args[i + 1];
                     
                     continue;
                 }
 
-                if (args[i] == "--extensions")
+                if (args[i] == "--extensions" || args[i] == "-e")
                 {
                     List<string> extensions = new List<string>();
                     for (int j = i + 1; j < args.Length; j++)
                     {
-                        if (args[j].StartsWith("--"))
+                        if (args[i].StartsWith("-"))
                         {
                             break;
                         }
